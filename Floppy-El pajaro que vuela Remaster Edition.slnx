@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="Floppy-El pajaro que vuela Remaster Edition.vcxproj" />
+  <Project Path="Floppy-El pajaro que vuela Remaster Edition.vcxproj" Id="05c3c72a-5d21-4613-9bce-5aa8d42460dc" />
 </Solution>
