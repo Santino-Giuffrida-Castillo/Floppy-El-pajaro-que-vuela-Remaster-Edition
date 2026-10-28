@@ -9,11 +9,11 @@ const int PIPE_VEL = 20;
 struct Pipe
 {
 	float posX;
-	float poxY;
+	float posY;
 	float width;
-	float high;
+	float height;
 
 };
 Pipe initPipe();
 
-//void movePipe(Pipe& pipe);
+void movePipe(Pipe& pipe);
