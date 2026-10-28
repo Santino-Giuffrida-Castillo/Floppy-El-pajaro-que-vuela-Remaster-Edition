@@ -8,8 +8,9 @@ void checkCollision(Player& player, Pipe& pipe)
 	{
 		if (player.posY + player.height >= (pipe.posY) && player.posY <= (pipe.posY + pipe.height))
 		{
-			pipe = initPipe();
-			player.isDead = true;
+		/*	pipe = initPipe();
+			player.isDead = true;*/
+			initGame(player, pipe);
 		}
 	}
 }

@@ -24,6 +24,15 @@ void movePlayer(Player& player)
 	{
 		player.posY += player.velY * GetFrameTime();
 	}
+
+	if (player.posY + player.height > GetScreenHeight())
+	{
+		player.posY = static_cast<float>(GetScreenHeight()) - player.height;
+	}
+	else if (player.posY < 0)
+	{
+		player.posY = 0;
+	}
 }
 void drawPlayer(Player player)
 {
