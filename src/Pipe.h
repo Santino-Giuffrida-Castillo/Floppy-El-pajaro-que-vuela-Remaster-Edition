@@ -16,4 +16,4 @@ struct Pipe
 };
 Pipe initPipe();
 
-void movePipe(Pipe& pipe);
+//void movePipe(Pipe& pipe);
