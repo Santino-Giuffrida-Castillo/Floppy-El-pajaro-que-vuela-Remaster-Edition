@@ -11,3 +11,8 @@ void checkCollision(Player& player, Pipe& pipe)
 		}
 	}
 }
+void initGame(Player& player, Pipe& pipe)
+{
+	player = initPlayer();
+	pipe = initPipe();
+}

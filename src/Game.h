@@ -3,3 +3,4 @@
 #include "Pipe.h"
 
 void checkCollision(Player& player, Pipe& pipe);
+void initGame(Player& player, Pipe& pipe);
