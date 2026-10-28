@@ -34,11 +34,12 @@ void playGame()
 		checkCollision(player, pipe);
 		checkIfPipeLevedScreen(pipe);
 
-		ClearBackground(BLACK);
+		
 		BeginDrawing();
+		ClearBackground(BLACK);
 		drawPipe(pipe);
 		drawPlayer(player);
-
+		DrawText("v0.1", 20, 20, 30, WHITE);
 		EndDrawing();
 	}
 }
