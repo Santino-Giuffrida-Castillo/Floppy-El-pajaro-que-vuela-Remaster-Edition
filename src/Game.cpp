@@ -1,4 +1,6 @@
 #include "Game.h"
+#include <raylib.h>
+
 
 void checkCollision(Player& player, Pipe& pipe)
 {
@@ -11,8 +13,25 @@ void checkCollision(Player& player, Pipe& pipe)
 		}
 	}
 }
+
 void initGame(Player& player, Pipe& pipe)
 {
 	player = initPlayer();
 	pipe = initPipe();
+}
+
+void playGame(Player& player, Pipe& pipe)
+{
+	initGame(player, pipe);
+	while (!WindowShouldClose())
+	{
+		movePlayer(player);
+		movePipe(pipe);
+
+		BeginDrawing();
+		drawPipe(pipe);
+		drawPlayer(player);
+
+		EndDrawing();
+	}
 }

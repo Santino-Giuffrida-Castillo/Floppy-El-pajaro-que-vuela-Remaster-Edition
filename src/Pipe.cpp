@@ -15,7 +15,7 @@ Pipe initPipe()
 
 void movePipe(Pipe& pipe)
 {
-	pipe.posX += PIPE_VEL * GetFrameTime();
+	pipe.posX -= PIPE_VEL * GetFrameTime();
 }
 
 void drawPipe(Pipe pipe)
