@@ -17,3 +17,8 @@ void movePipe(Pipe& pipe)
 {
 	pipe.posX += PIPE_VEL * GetFrameTime();
 }
+
+void drawPipe(Pipe pipe)
+{
+	DrawRectangle(pipe.posX, pipe.posY, pipe.width, pipe.height, RED);
+}

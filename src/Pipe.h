@@ -17,3 +17,5 @@ struct Pipe
 Pipe initPipe();
 
 void movePipe(Pipe& pipe);
+
+void drawPipe(Pipe pipe);
