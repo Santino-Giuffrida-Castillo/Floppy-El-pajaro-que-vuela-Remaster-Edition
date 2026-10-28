@@ -25,3 +25,7 @@ void movePlayer(Player& player)
 		player.posY += player.velY * GetFrameTime();
 	}
 }
+void drawPlayer(Player player)
+{
+	DrawRectangle(player.posX, player.posY, player.width, player.height, BLUE);
+}

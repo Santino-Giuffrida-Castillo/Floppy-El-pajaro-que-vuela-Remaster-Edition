@@ -12,3 +12,4 @@ struct Player
 
 Player initPlayer();
 void movePlayer(Player& player);
+void drawPlayer(Player player);
