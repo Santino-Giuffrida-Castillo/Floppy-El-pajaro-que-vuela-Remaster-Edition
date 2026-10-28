@@ -9,6 +9,8 @@ namespace flappyBird
 		float width;
 		float height;
 		float velY;
+		float jumpForce;
+		float verticalVel;
 		bool isDead;
 	};
 
