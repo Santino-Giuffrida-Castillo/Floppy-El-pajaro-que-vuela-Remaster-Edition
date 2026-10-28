@@ -4,7 +4,7 @@
 const int NUMB_OF_PIPES = 2;
 const int MAX_PIPES = 30;
 const int PIPE_SPAWN_OFFSET = 40;
-const int PIPE_VEL = 20;
+const float PIPE_VEL = 100;
 
 struct Pipe
 {

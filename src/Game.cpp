@@ -20,18 +20,32 @@ void initGame(Player& player, Pipe& pipe)
 	pipe = initPipe();
 }
 
-void playGame(Player& player, Pipe& pipe)
+void playGame()
 {
+	Player player;
+	Pipe pipe;
+	InitWindow(1024, 768, "Floppy:El Pajaro que Vuela Remaster Editon");
 	initGame(player, pipe);
 	while (!WindowShouldClose())
 	{
 		movePlayer(player);
 		movePipe(pipe);
+		checkCollision(player, pipe);
+		checkIfPipeLevedScreen(pipe);
 
+		ClearBackground(BLACK);
 		BeginDrawing();
 		drawPipe(pipe);
 		drawPlayer(player);
 
 		EndDrawing();
+	}
+}
+
+void checkIfPipeLevedScreen(Pipe& pipe)
+{
+	if ((pipe.posX + pipe.width) < 0)
+	{
+		pipe = initPipe();
 	}
 }

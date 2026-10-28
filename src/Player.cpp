@@ -10,9 +10,9 @@ Player initPlayer()
 	player.posY = 200;
 	player.velY = PLAYER_SPEED;
 	player.width = 40;
-	player.height = GetScreenHeight() - player.posY;
+	player.height = 40;
 	player.isDead = false;
-
+	return player;
 }
 void movePlayer(Player& player)
 {
@@ -27,5 +27,5 @@ void movePlayer(Player& player)
 }
 void drawPlayer(Player player)
 {
-	DrawRectangle(player.posX, player.posY, player.width, player.height, BLUE);
+	DrawRectangle(static_cast<int>(player.posX), static_cast<int>(player.posY), static_cast<int>(player.width), static_cast<int>(player.height), BLUE);
 }

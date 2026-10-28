@@ -1,5 +1,5 @@
 #pragma once
-const int PLAYER_SPEED = 30;
+const float PLAYER_SPEED = 100;
 struct Player
 {
 	float posX;
