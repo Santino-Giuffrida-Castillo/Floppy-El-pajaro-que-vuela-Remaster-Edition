@@ -1,4 +1,5 @@
 #pragma once
+const int PLAYER_SPEED = 30;
 struct Player
 {
 	float posX;
@@ -10,3 +11,4 @@ struct Player
 };
 
 Player initPlayer();
+void movePlayer(Player& player);
