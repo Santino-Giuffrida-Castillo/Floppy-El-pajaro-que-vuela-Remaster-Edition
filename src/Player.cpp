@@ -34,7 +34,6 @@ namespace flappyBird
 		}
 		else
 		{
-
 			
 			if (player.verticalVel > 350)
 			{
