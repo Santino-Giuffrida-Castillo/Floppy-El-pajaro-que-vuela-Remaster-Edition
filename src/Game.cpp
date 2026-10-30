@@ -9,10 +9,14 @@ namespace flappyBird
 		{
 			if (player.posY + player.height >= (pipe.posY) && player.posY <= (pipe.posY + pipe.height))
 			{
-				/*	pipe = initPipe();
-					player.isDead = true;*/
-				/*initGame(player, pipe);*/
+
+				player.isDead = true;
+
 			}
+		}
+		else if (player.posY + player.height > GetScreenHeight())
+		{
+			player.isDead = true;
 		}
 	}
 
@@ -52,7 +56,7 @@ namespace flappyBird
 			moveObstacles(obstacles);
 			checkCollision(player, obstacles);
 			checkIfObstacleLevedScreen(obstacles);
-
+			checkIfPlayerDied(player, obstacles);
 
 			BeginDrawing();
 			ClearBackground(BLACK);
@@ -65,21 +69,27 @@ namespace flappyBird
 
 	void checkIfObstacleLevedScreen(Obstacle& obstacle)
 	{
-			if (obstacle.pipes[0].posX + obstacle.pipes[0].width < 0)
-			{
-
-				float newPosX = obstacle.pipes[0].posX + (MAX_OBSTACLES * OBSTACLE_SPACING);
-				obstacle.pipes[0] = initPipe(newPosX);
-				obstacle.pipes[1] = initPipe(newPosX, obstacle.pipes[0].height);
-			}
+		float newPosX;
+		if (obstacle.pipes[0].posX + obstacle.pipes[0].width < 0)
+		{
+			newPosX = obstacle.pipes[0].posX + (MAX_OBSTACLES * OBSTACLE_SPACING);
+			obstacle.pipes[0] = initPipe(newPosX);
+			obstacle.pipes[1] = initPipe(newPosX, obstacle.pipes[0].height);
+		}
 	}
 	void checkIfObstacleLevedScreen(Obstacle obstacles[MAX_OBSTACLES])
 	{
 		for (int i = 0; i < MAX_OBSTACLES; i++)
 		{
-
 			checkIfObstacleLevedScreen(obstacles[i]);
-			
+		}
+	}
+
+	void checkIfPlayerDied(Player& player, Obstacle obstacles[MAX_OBSTACLES])
+	{
+		if (player.isDead)
+		{
+			initGame(player, obstacles);
 		}
 	}
 }

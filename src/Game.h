@@ -9,5 +9,6 @@ namespace flappyBird
 	void playGame();
 	void checkIfObstacleLevedScreen(Obstacle& obstacles);
 	void checkIfObstacleLevedScreen(Obstacle obstacles[MAX_OBSTACLES]);
+	void checkIfPlayerDied(Player& player, Obstacle obstacles[MAX_OBSTACLES]);
 	
 }
