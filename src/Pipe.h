@@ -1,12 +1,17 @@
 #pragma once
 
+#include <raylib.h>
+
 namespace flappyBird
 {
 	const int NUMB_OF_PIPES = 2;
 	const int MAX_PIPES = 30;
 	const int PIPE_SPAWN_OFFSET = 40;
 	const float PIPE_VEL = 100;
-
+	const int MAX_OBSTACLES = 30;
+	const float OBSTACLE_SPACING = 250.0f;
+	const int PIPE_OFFSET = 140;
+	const float startX = static_cast<float>(GetScreenWidth() + PIPE_SPAWN_OFFSET);
 	struct Pipe
 	{
 		float posX;
@@ -15,9 +20,24 @@ namespace flappyBird
 		float height;
 
 	};
-	Pipe initPipe();
+
+	struct Obstacle
+	{
+		Pipe pipes[2];
+	};
+
+	Pipe initPipe(float posX);
+
+	Pipe initPipe(float posX, float lastTopPipeHeight);
+
+	Obstacle createObstacles(int index);
 
 	void movePipe(Pipe& pipe);
 
+	void moveObstacles(Obstacle obstacles[MAX_OBSTACLES]);
+
 	void drawPipe(Pipe pipe);
+
+	void drawObstacles(Obstacle obstacles[MAX_OBSTACLES]);
+
 }
