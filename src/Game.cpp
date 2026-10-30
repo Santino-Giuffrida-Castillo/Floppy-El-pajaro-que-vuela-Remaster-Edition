@@ -1,5 +1,6 @@
 #include "Game.h"
 #include <raylib.h>
+#include "Screen.h"
 namespace flappyBird
 {
 
@@ -42,29 +43,24 @@ namespace flappyBird
 		}
 	}
 
-	void playGame()
+	void playGame(Player& player, Obstacle obstacles[MAX_OBSTACLES], Screen& actualScreen)
 	{
-		Player player;
-		Obstacle obstacles[MAX_OBSTACLES];
-
-
-		InitWindow(1024, 768, "Floppy:El Pajaro que Vuela Remaster Editon");
-		initGame(player, obstacles);
-		while (!WindowShouldClose())
-		{
 			movePlayer(player);
 			moveObstacles(obstacles);
 			checkCollision(player, obstacles);
 			checkIfObstacleLevedScreen(obstacles);
-			checkIfPlayerDied(player, obstacles);
+			//checkIfPlayerDied(player, obstacles);
 
-			BeginDrawing();
+			if (player.isDead)
+			{
+				actualScreen = Screen::MAIN_MENU;
+			}
+
 			ClearBackground(BLACK);
+
 			drawObstacles(obstacles);
 			drawPlayer(player);
-			DrawText("v0.1", 20, 20, 30, WHITE);
-			EndDrawing();
-		}
+
 	}
 
 	void checkIfObstacleLevedScreen(Obstacle& obstacle)

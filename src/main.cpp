@@ -1,6 +1,6 @@
-#include "Game.h"
+#include "ScreenManager.h"
 using namespace flappyBird;
 int main()
 {
-	playGame();
+	showScreen();
 }
